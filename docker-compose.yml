@@ -1,0 +1,23 @@
+# Solo PostgreSQL para desarrollo local. Las credenciales vienen de la raíz: copie
+# .env.example a .env (mismo valor de DB_PASSWORD que en backend/.env).
+services:
+  db:
+    image: postgres:16
+    container_name: huarmy-sgd-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${DB_NAME:-huarmy_sgd}
+      POSTGRES_USER: ${DB_USER:-huarmy}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?Defina DB_PASSWORD en el archivo .env de la raíz}
+    ports:
+      - "127.0.0.1:${DB_PORT:-5432}:5432"
+    volumes:
+      - huarmy_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-huarmy} -d ${DB_NAME:-huarmy_sgd}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  huarmy_pgdata:

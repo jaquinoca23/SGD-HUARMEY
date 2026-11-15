@@ -1,0 +1,27 @@
+# Secretos y entorno
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+backend/staticfiles/
+backend/private_media/
+
+# Node
+node_modules/
+frontend/dist/
+
+# .NET (SGDGuarmail)
+desktop/**/bin/
+desktop/**/obj/
+*.user
+
+# Editor / sistema
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+.DS_Store
+Thumbs.db
+config.bat
