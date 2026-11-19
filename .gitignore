@@ -1,6 +1,4 @@
 # Secretos y entorno
-.env
-.env.*
 !.env.example
 
 # Python
@@ -21,9 +19,9 @@ desktop/**/obj/
 *.user
 
 # Editor / sistema
-.vscode/*
 !.vscode/extensions.json
 !.vscode/settings.json
 .idea/
 .DS_Store
 Thumbs.db
+config.bat

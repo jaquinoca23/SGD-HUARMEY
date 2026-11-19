@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  html { font-family: "Manrope", "Segoe UI", sans-serif; }
+  html { font-family: "Inter", "Segoe UI", sans-serif; }
   body { @apply antialiased text-slate-800; }
   button, input, textarea, select { font: inherit; }
 }
